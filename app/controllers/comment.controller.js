@@ -10,13 +10,13 @@ exports.create = (req, res) => {
     }
 
     // Create a comment
-    const comment = new comment({
+    const Comment = new comment({
         title: req.body.title || "Untitled comment", 
         content: req.body.content
     });
 
     // Save comment in the database
-    comment.save()
+    Comment.save()
     .then(data => {
         res.send(data);
     }).catch(err => {
